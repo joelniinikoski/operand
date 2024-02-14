@@ -104,8 +104,18 @@ async fn main() {
             }
         }
 
+        //reset with r
+        if is_key_pressed(KeyCode::R) {
+            startnum = 0;
+            endnum = lastnum;
+            timer = 0.0;
+            moves = 0;
+        }
+
         if startnum > 30000 {
             startnum = 30000;
+        } else if startnum < -30000 {
+            startnum = -30000;
         }
 
         //next number
